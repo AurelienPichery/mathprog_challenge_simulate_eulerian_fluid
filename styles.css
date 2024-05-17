@@ -1,0 +1,14 @@
+body {
+    font-family: verdana; 
+    font-size: 15px;
+}		
+
+#gravity {
+    width: 1000px;
+}
+#speed {
+    width: 1000px;
+}
+#obstacleSize{
+    width: 1000px;
+}

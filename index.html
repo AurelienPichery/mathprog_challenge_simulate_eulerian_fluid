@@ -1,0 +1,32 @@
+<!-- DETERMINE HTML PAGE & DOC PROPERTIES -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- LINK CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Eulerian Fluid Simulation</title>
+</head>
+<body>
+	<!-- Instance all the inputs to modify the scene and fluid's properties -->
+	<input type = "checkbox" id = "streamButton" onclick = "scene.showStreamlines = !scene.showStreamlines">Streamlines
+	<input type = "checkbox" id = "velocityButton" onclick = "scene.showVelocities = !scene.showVelocities">Velocities
+	<input type = "checkbox" name = "field" id = "pressureButton" onclick = "scene.showPressure = !scene.showPressure;">Pressure
+	<input type = "checkbox" name = "field" id = "smokeButton" onclick = "scene.showSmoke = !scene.showSmoke;" checked>Smoke
+	<input type = "checkbox" id = "overrelaxButton" onclick = "scene.overRelaxation = scene.overRelaxation == 1.0 ? 1.9 : 1.0" checked>Overrelax
+	<br>
+	<input type="range" id="gravity" name="gravity" min="0" max="25" value="9.81" step="0.01">Gravity (<span id="gravityValue">13</span>)
+	<br>
+	<input type="range" id="speed" name="speed" min="0" max="10" value="2.0" step="0.01">Water Pipe Speed (<span id="speedValue">5</span>)
+	<br>
+	<input type="range" id="obstacleSize" name="obstacleSize" min="0.01" max="0.3" value="0.1" step="0.01">Obstacle Size (<span id="obstacleSizeValue">0.1</span>)
+	<br>
+
+	<!-- Instance the canvas which will serve as a grid -->
+	<canvas id="staggeredGrid"></canvas>
+
+	<!-- LINK JavaScript -->
+	<script src="javascript.js"></script>
+</body>
+</html>
